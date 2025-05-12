@@ -10,6 +10,7 @@ export type Row =
     | {
         type: "car";
         direction: boolean;
+        speed: number;
         vehicles: {
             initialTileIndex: number;
             color: THREE.ColorRepresentation;
