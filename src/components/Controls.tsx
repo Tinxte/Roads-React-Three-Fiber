@@ -1,11 +1,10 @@
 import { queueMove } from "../store/player";
-// import { useEventListeners } from "../hooks/useEventListeners"
+import useEventListeners from "../hooks/useEventListeners";
 import "./Controls.css";
 
 export function Controls() {
-    // TODO create event listeners 3250
 
-    // useEventListeners();
+    useEventListeners();
 
     return (
         <div id="controls">
