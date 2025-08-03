@@ -28,7 +28,6 @@ export default function usePlayerAnimation(
             moveClock.stop();
         }
 
-        //35:38
     })
 }
 
