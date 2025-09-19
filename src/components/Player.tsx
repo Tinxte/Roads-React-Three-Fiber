@@ -1,12 +1,23 @@
 import * as THREE from "three";
 import { Bounds } from "@react-three/drei";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import { useThree } from "@react-three/fiber";
 import usePlayerAnimation from "../hooks/usePlayerAnimation";
 
 export function Player() {
 
   const player = useRef<THREE.Group>(null);
+  //access the camera
+  const camera = useThree((state) => state.camera);
+
   usePlayerAnimation(player);
+
+  useEffect(() => {
+    if (!player.current) return;
+
+    //Attaches player to camera
+    player.current.add(camera);
+  });
 
   return (
     <Bounds fit clip observe margin={10}>
